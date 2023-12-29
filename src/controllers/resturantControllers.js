@@ -128,7 +128,7 @@ const getRestaurants = async () => {
 };
 
 
-
+//Problem 6 burada
 const getRestaurantsByRating = async () => {
     try {
         const restaurants = await Resturant.find();

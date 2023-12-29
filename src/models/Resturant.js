@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { v4: uuidv4 } = require('uuid');
 const Schema = mongoose.Schema;
+// id yi ve ilişkileri bu şekilde kullandım çünkü UUID formatına uygun olması gerekiyordu
 
 const restaurantSchema = new Schema({
   _id: {

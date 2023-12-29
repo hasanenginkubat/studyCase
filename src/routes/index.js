@@ -5,6 +5,7 @@ const resturant = require("./resturantRoutes")
 const review = require("./reviewRoutes")
 const router = express.Router();
 
+//tüm rotalarım
 router.use(express.json());
 
 router.use("/users", users);

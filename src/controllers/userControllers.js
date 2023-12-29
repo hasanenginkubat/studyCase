@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const Users = require("../models/Users");
 
+
 const createUser = async (email, password, fullName, profileImage, age, gender, addresses) => {
   try {
     const existingUser = await Users.findOne({ email })
@@ -38,6 +39,7 @@ const createUser = async (email, password, fullName, profileImage, age, gender, 
   }
 };
 
+//Kullanıcı dostu hata mesajları ile login fonksiyonum
 const login = async (email, password) => {
   try {
     const user = await Users.findOne({ email })
@@ -55,6 +57,7 @@ const login = async (email, password) => {
     if (!isValidPassword) {
       throw new Error("Geçersiz şifre");
     }
+    // client reduxunda kullanabiliceğim bilgiler...
     return { 
       logged: true, userId: user._id, profileImage: user.profileImage,
       fullName: user.fullName, isAdmin: user.isAdmin, age: user.age, 

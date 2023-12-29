@@ -3,20 +3,17 @@ const Users = require("../models/Users")
 const Orders = require("../models/Orders")
 const Menu = require("../models/Menu")
 
+//Siparişler için yaptığım controllers
 
 const createOrder = async (userId, restaurantId, orderItems, address) => {
     try {
         const restaurant = await Restaurant.findById(restaurantId)
-
-        if(!restaurant){
-        throw new Error("Girmiş olduğunuz bilgiler doğru değildir lütfen daha sonra tekrar deneyin.")
-        }
-
         const user = await Users.findById(userId);
 
-        if (!user) {
-            throw new Error("Kullanıcı bulunamadı.");
+        if(!restaurant || !user){
+        throw new Error("Girmiş olduğunuz bilgiler doğru değildir.")
         }
+
         console.log(user.addresses)
 
          const newOrder = new Orders({

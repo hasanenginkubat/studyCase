@@ -1,7 +1,8 @@
 const Resturant = require("../models/Resturant")
 const Menu = require("../models/Menu")
-const axios = require("axios");
+//const axios = require("axios");
 
+//Resturant bilgileri için oluşturduğum controllers
 
 // Eğer google gecode api keyim olsaydı bu fonksiyon ile kordinatları otomatik olarak apim doldurcaktı
 // const geocodeAddress = async (address) => {

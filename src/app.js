@@ -13,6 +13,7 @@ server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
+  //clientte kullanıcağımız linki alta yazıyoruz
   res.header('Access-Control-Allow-Origin', 'client linki');
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

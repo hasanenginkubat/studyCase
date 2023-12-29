@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 const { v4: uuidv4 } = require('uuid');
 
+
 const orderSchema = new Schema({
+  // id yi ve ilişkileri bu şekilde kullandım çünkü UUID formatına uygun olması gerekiyordu
+
   _id: {
     type: String,
     default: uuidv4,

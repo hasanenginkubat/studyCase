@@ -6,16 +6,13 @@ const Review = require("../models/Review");
 const createReview = async (userId, restaurantId, orderId, comment, rating) => {
     try {
         const restaurant = await Restaurant.findById(restaurantId);
+        const user = await Users.findById(userId);
 
-        if (!restaurant) {
+        if (!restaurant || !user) {
             throw new Error("Girilen bilgiler doğru değil. Lütfen tekrar deneyin.");
         }
 
-        const user = await Users.findById(userId);
 
-        if (!user) {
-            throw new Error("Kullanıcı bulunamadı.");
-        }
 
         const order = await Orders.findById(orderId);
         //Sadece bir kez comment yapılması için kullandığım anahtar

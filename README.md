@@ -19,7 +19,7 @@
 
 ## Kurulum
 
-1. Projeyi bilgisayarınıza kopyalayın:
+
 
    ```yarn install
-      yarn start
+   ```yarn start

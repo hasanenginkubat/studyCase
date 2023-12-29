@@ -18,7 +18,7 @@ const createReview = async (userId, restaurantId, orderId, comment, rating) => {
         }
 
         const order = await Orders.findById(orderId);
-
+        //Sadece bir kez comment yapılması için kullandığım anahtar
         if (order.isComment) {
             throw new Error("Sadece bir kez yorum yapabilirsiniz.");
         }

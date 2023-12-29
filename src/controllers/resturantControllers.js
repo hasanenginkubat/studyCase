@@ -25,7 +25,7 @@ const axios = require("axios");
 
 const createRestaurant = async (name, description, logo, address, location, types) => {
     try {
-
+        
         // const location = await geocodeAddress(address);
 
         const restaurant = new Resturant({
@@ -114,7 +114,7 @@ const getRestaurants = async () => {
       throw error;
     }
   };
-
+   // ratingleri avarajlamak için kullandığım fonksiyon
   const calculateAverageRating = (ratings) => {
     
     if (ratings.length === 0) {
